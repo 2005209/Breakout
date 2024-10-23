@@ -77,6 +77,9 @@ void GameManager::update(float dt)
         _timeLastPowerupSpawned = _time;
     }
 
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && _powerupManager->getPowerupsSpawned() < 1) _powerupManager->spawnPowerup();
+  
     // move paddle
    /* if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) _paddle->moveRight(dt);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) _paddle->moveLeft(dt);*/

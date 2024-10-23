@@ -1,5 +1,6 @@
 #include "Ball.h"
-#include "GameManager.h" // avoid cicular dependencies
+#include "GameManager.h" // avoid cicular dependencies+
+
 
 Ball::Ball(sf::RenderWindow* window, float velocity, GameManager* gameManager)
     : _window(window), _velocity(velocity), _gameManager(gameManager),
@@ -28,6 +29,7 @@ void Ball::update(float dt)
         else
         {
             setFireBall(0);    // disable fireball
+            _sprite.setRadius(RADIUS);
             _sprite.setFillColor(sf::Color::Cyan);  // back to normal colour.
         }        
     }
@@ -77,6 +79,7 @@ void Ball::update(float dt)
 
         // Adjust position to avoid getting stuck inside the paddle
         _sprite.setPosition(_sprite.getPosition().x, _gameManager->getPaddle()->getBounds().top - 2 * RADIUS);
+
     }
 
     // collision with bricks
@@ -113,4 +116,11 @@ void Ball::setFireBall(float duration)
     }
     _isFireBall = false;
     _timeWithPowerupEffect = 0.f;    
+}
+
+
+void Ball::setSize(float radius) {
+
+    _sprite.setRadius(radius);
+
 }
