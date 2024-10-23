@@ -32,4 +32,6 @@ fire ball (green)
 * Implement commentary with calls to an LLM such as LLama
 
 # Time Details and Changelist
-Bug fixes- compiler issue fireballPowerup being referneced in powerupbase, its parent class (~5 min)
+Compiler issue; fireballPowerup being referneced in powerupbase, its parent class (~5 min)
+
+Better UI; progress bar added (15 min)
