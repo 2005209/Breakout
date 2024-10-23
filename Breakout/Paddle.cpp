@@ -39,6 +39,35 @@ void Paddle::mouseMove(float dt, sf::RenderWindow* window) {
   
 }
 
+void Paddle::colourChange() {
+
+
+    switch (rand() % 6)
+    {
+    case 0:
+        _sprite.setFillColor(sf::Color::Cyan);
+        break;
+    case 1:
+        _sprite.setFillColor(sf::Color::Blue);
+        break;
+    case 2:
+        _sprite.setFillColor(sf::Color::Green);
+        break;
+    case 3:
+        _sprite.setFillColor(sf::Color::Magenta);
+        break;
+    case 4:
+        _sprite.setFillColor(sf::Color::White);
+        break;
+    case 5:
+        _sprite.setFillColor(sf::Color::Yellow);
+        break;
+    default:
+        break;
+    }
+
+}
+
 void Paddle::update(float dt)
 {
     if (_timeInNewSize > 0)

@@ -34,8 +34,10 @@ fire ball (green)
 # Time Details and Changelist
 Compiler issue; fireballPowerup being referneced in powerupbase, its parent class (~5 min)
 
-Better UI; progress bar added (15 min)
+Better UI; progress bar added (30 min)
 
 Mouse input; Implemented for pad (30 min)
 
-More ball types (e.g., multiball, sticky ball [where you shoot the ball from the paddle every time], tiny ball, big ball, brick-tracking ball) (1.5hrs)
+More ball types (e.g., multiball, sticky ball [where you shoot the ball from the paddle every time], tiny ball, big ball, brick-tracking ball) (2hrs)
+
+paddle hit response (20min)

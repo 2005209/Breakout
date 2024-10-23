@@ -12,6 +12,7 @@ public:
     void moveLeft(float dt);
     void moveRight(float dt);
     void mouseMove(float dt, sf::RenderWindow* window);
+    void colourChange();
     void update(float dt);
     void render();
     sf::FloatRect getBounds() const;
