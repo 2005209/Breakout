@@ -35,3 +35,4 @@ fire ball (green)
 Compiler issue; fireballPowerup being referneced in powerupbase, its parent class (~5 min)
 
 Better UI; progress bar added (15 min)
+Mouse input; Implemented for pad (30 min)

@@ -33,6 +33,12 @@ void Paddle::moveRight(float dt)
     }
 }
 
+void Paddle::mouseMove(float dt, sf::RenderWindow* window) {
+   
+    _sprite.setPosition(sf::Vector2f(sf::Mouse::getPosition().x , _sprite.getPosition().y));
+  
+}
+
 void Paddle::update(float dt)
 {
     if (_timeInNewSize > 0)
