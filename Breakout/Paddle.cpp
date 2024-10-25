@@ -5,8 +5,9 @@ Paddle::Paddle(sf::RenderWindow* window)
     : _window(window), _width(PADDLE_WIDTH), _timeInNewSize(0.0f), _isAlive(true)
 {
     _sprite.setFillColor(sf::Color::Cyan);
-    _sprite.setPosition((window->getSize().x - _width) / 2.0f, window->getSize().y - 50.0f);
+    _sprite.setPosition((window->getSize().x - _width) / 2.0f, window->getSize().y - 100.0f);
     _sprite.setSize(sf::Vector2f(_width, PADDLE_HEIGHT));
+    _sprite.setOrigin(sf::Vector2f(_width/2, PADDLE_HEIGHT/2));
 }
 
 Paddle::~Paddle()
@@ -65,6 +66,20 @@ void Paddle::colourChange() {
     default:
         break;
     }
+
+}
+
+void Paddle::turnPaddle(float dir) {
+
+    _sprite.setRotation(45*dir);
+
+}
+
+float  Paddle::getPaddleDir() {
+
+    if (_sprite.getRotation() == 0) { return -1; }
+   
+    return _sprite.getRotation();
 
 }
 

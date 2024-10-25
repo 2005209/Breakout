@@ -23,6 +23,10 @@ constexpr float PADDLE_WIDTH = 150.0f;
 constexpr float PADDLE_HEIGHT = 20.0f;
 constexpr float PADDLE_SPEED = 300.0f;
 
+constexpr float PADDLE_RIGHT = 1;
+constexpr float PADDLE_LEFT = -1;
+constexpr float PADDLE_UP = 0;
+
 // Ball settings
 constexpr float BALL_RADIUS = 10.0f;
 constexpr float BALL_SPEED = 400.0f;

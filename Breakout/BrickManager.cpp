@@ -21,6 +21,34 @@ void BrickManager::createBricks(int rows, int cols, float brickWidth, float bric
             _bricks.emplace_back(x, y, brickWidth, brickHeight);
         }
     }
+
+    if (cols % 2 == 0)
+        leftEdge = _window->getSize().x / 2 - ((cols / 2.0f) * brickWidth + (cols / 2.0f - 0.5f) * spacing) - 300;
+    else
+        leftEdge = _window->getSize().x / 2 - ((cols / 2.0f - 0.5f) * brickWidth + (cols / 2.0f) * spacing) - 300;
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            float x = j * (brickHeight + spacing) + leftEdge;
+            float y = i * (brickWidth + spacing) + TOP_PADDING*3;
+            _bricks.emplace_back(x, y, brickHeight, brickWidth);
+        }
+    }
+
+    float rightEdge;
+    if (cols % 2 == 0)
+        rightEdge = _window->getSize().x - ((cols / 2.0f) * brickWidth + (cols / 2.0f - 0.5f) * spacing);
+    else
+        rightEdge = _window->getSize().x - ((cols / 2.0f - 0.5f) * brickWidth + (cols / 2.0f) * spacing);
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            float x = j * (brickHeight + spacing) + rightEdge;
+            float y = i * (brickWidth + spacing) + TOP_PADDING * 3;
+            _bricks.emplace_back(x, y, brickHeight, brickWidth);
+        }
+    }
+
 }
 
 void BrickManager::render()

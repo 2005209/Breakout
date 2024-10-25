@@ -78,7 +78,11 @@ void GameManager::update(float dt)
     }
 
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && _powerupManager->getPowerupsSpawned() < 1) _powerupManager->spawnPowerup();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace) && _powerupManager->getPowerupsSpawned() < 1) { _powerupManager->spawnPowerup(); };
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && _powerupManager->getPowerupsSpawned() < 1) { _paddle->turnPaddle(PADDLE_RIGHT); }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && _powerupManager->getPowerupsSpawned() < 1) { _paddle->turnPaddle(PADDLE_LEFT); }
+    else { _paddle->turnPaddle(PADDLE_UP); }
   
     // move paddle
    /* if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) _paddle->moveRight(dt);

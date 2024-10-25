@@ -31,7 +31,10 @@ void Ball::update(float dt)
             setFireBall(0);    // disable fireball
             _sprite.setRadius(RADIUS);
             _sprite.setFillColor(sf::Color::Cyan);  // back to normal colour.
-        }        
+        }      
+        if (_sprite.getRadius() != RADIUS) {
+            _sprite.setRadius(RADIUS);
+        }
     }
 
     // Fireball effect
@@ -72,7 +75,12 @@ void Ball::update(float dt)
     // collision with paddle
     if (_sprite.getGlobalBounds().intersects(_gameManager->getPaddle()->getBounds()))
     {
-        _direction.y *= -1; // Bounce vertically
+       
+        float paddleDir = _gameManager->getPaddle()->getPaddleDir();
+        
+        _direction.y *= sinf(paddleDir);
+
+        _direction.x *= -cosf(paddleDir);
 
         float paddlePositionProportion = (_sprite.getPosition().x - _gameManager->getPaddle()->getBounds().left) / _gameManager->getPaddle()->getBounds().width;
         _direction.x = paddlePositionProportion * 2.0f - 1.0f;

@@ -12,7 +12,9 @@ public:
     void moveLeft(float dt);
     void moveRight(float dt);
     void mouseMove(float dt, sf::RenderWindow* window);
+    void turnPaddle(float dir);
     void colourChange();
+    float getPaddleDir();
     void update(float dt);
     void render();
     sf::FloatRect getBounds() const;

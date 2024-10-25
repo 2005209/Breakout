@@ -1,9 +1,12 @@
 #include "PowerupManager.h"
-
+#include <ctime>
 
 PowerupManager::PowerupManager(sf::RenderWindow* window, Paddle* paddle, Ball* ball)
     : _window(window), _paddle(paddle), _ball(ball)
 {
+
+    srand(time(0));
+
 }
 
 PowerupManager::~PowerupManager()
